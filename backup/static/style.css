@@ -1,0 +1,220 @@
+/* Base Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    overflow-y: auto;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'League Spartan', sans-serif;
+}
+
+.container {
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+}
+
+.input-section {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+#video-url {
+    width: 60%;
+    padding: 10px;
+    font-size: 16px;
+}
+
+#convert-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+/* Loading Spinner */
+.spinner {
+    border: 8px solid #f3f3f3;
+    border-top: 8px solid #444;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 1s linear infinite;
+    margin: 20px auto;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Main Content Layout */
+.main-content {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.left-panel {
+    flex: 1;
+    padding-top: 0px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+}
+
+.right-panel {
+    flex: 1;
+    padding-top: 60px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+#video-title {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+}
+
+#video-thumbnail {
+    display: block;
+    margin: 20px auto;
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+#video-details {
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* Toggle Buttons */
+.toggle-btns {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.toggle-btns button {
+    flex: 1;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    background-color: #f1f1f1;
+    transition: background-color 0.3s;
+}
+
+.toggle-btns button.active {
+    background-color: #444;
+    color: #fff;
+}
+
+.toggle-btns button:not(.active):hover {
+    background-color: #ddd;
+}
+
+/* Format Headers and Cards */
+.format-header, .format-card {
+    display: flex; /* Horizontal alignment */
+    justify-content: space-between; /* Even spacing between columns */
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    align-items: center; /* Vertical centering */
+}
+
+.format-header span, .format-card span {
+    flex: 1;
+    text-align: center;
+}
+
+.format-header span.col-resolution,
+.format-card span.col-resolution,
+.format-header span.col-format,
+.format-card span.col-format {
+    text-align: left; /* Left align specific columns */
+}
+
+/* Download Button Styles */
+.col-action-btn {
+    flex: 0.85;
+    display: inline-flex; /* Flexbox for alignment */
+    align-items: center; /* Vertically center content */
+    justify-content: center; /* Horizontally center content */
+    gap: 8px; /* Space between text and spinner */
+    padding: 8px 16px; /* Button padding */
+    white-space: nowrap; /* Prevent text wrapping */
+    background-color: #28a745; /* Green background for download buttons */
+    color: #fff; /* White text */
+    border-radius: 4px; /* Rounded corners */
+    border: none; /* Remove default border */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Smooth hover transition */
+}
+
+.col-action-btn:hover {
+    background-color: #218838; /* Darker green on hover */
+}
+
+/* Download Button Spinner */
+.button-spinner {
+    border: 2px solid #f3f3f3;
+    border-top: 2px solid #fff;
+    border-radius: 50%;
+    width: 12px;
+    height: 12px;
+    animation: spin 0.8s linear infinite;
+    display: inline-block;
+    margin-left: 8px; /* Space between text and spinner */
+    vertical-align: middle;
+    flex-shrink: 0; /* Prevent spinner from shrinking */
+}
+
+/* Progress Bar */
+.progress-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background-color: #ccc;
+}
+
+.progress {
+    height: 100%;
+    width: 0%;
+    background-color: #444;
+    transition: width 0.2s;
+}
+
+/* Responsive Design */
+@media (max-width: 1000px) {
+    .main-content {
+        flex-direction: column;
+    }
+
+    #video-url {
+        width: 100%;
+        margin: 0 auto;
+        box-sizing: border-box;
+    }
+
+    .input-section {
+        flex-direction: column;
+    }
+
+    #convert-btn {
+        width: 100%;
+        margin-left: 0;
+        margin-top: 10px;
+    }
+
+    .format-header, .format-card {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+}

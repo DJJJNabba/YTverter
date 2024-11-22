@@ -1,0 +1,419 @@
+/* CSS Variables for Light and Dark Themes */
+:root {
+    --background-color: #f0f2f5;
+    --text-color: #333333;
+    --primary-color: #6200ea;
+    --secondary-color: #03dac6;
+    --navbar-background: #ffffff;
+    --button-background: #6200ea;
+    --button-hover: #3700b3;
+    --spinner-color: #6200ea;
+    --card-background: #ffffff;
+    --border-color: #e0e0e0;
+}
+
+body.dark-mode {
+    --background-color: #121212;
+    --text-color: #e0e0e0;
+    --primary-color: #bb86fc;
+    --secondary-color: #03dac6;
+    --navbar-background: #1f1f1f;
+    --button-background: #bb86fc;
+    --button-hover: #985eff;
+    --spinner-color: #bb86fc;
+    --card-background: #1f1f1f;
+    --border-color: #333333;
+}
+
+html {
+    scroll-behavior: smooth; /* Smooth scrolling if enabled later */
+}
+
+/* Hide Scrollbars (Universal Method) */
+body::-webkit-scrollbar, html::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Edge */
+}
+body {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+}
+
+/* Optional: Customize overflow behavior */
+.custom-overflow {
+    overflow: hidden; /* Hide overflow completely */
+    position: relative; /* Ensure proper positioning */
+    /* Add custom scrolling behavior if needed */
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'League Spartan', sans-serif;
+}
+
+/* Navbar Styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--navbar-background);
+    padding: 15px 30px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: background-color 0.3s;
+}
+
+.navbar-brand a {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.navbar-links {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-links a {
+    margin-right: 20px;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.2rem;
+    transition: color 0.3s;
+}
+
+.navbar-links a:hover {
+    color: var(--secondary-color);
+}
+
+.theme-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: var(--text-color);
+    transition: color 0.3s;
+}
+
+.theme-toggle:hover {
+    color: var(--primary-color);
+}
+
+/* Container */
+.container {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Heading */
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Input Section */
+.input-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+#video-url {
+    width: 60%;
+    max-width: 600px;
+    padding: 12px 20px;
+    font-size: 1rem;
+    border: 2px solid var(--primary-color);
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+#video-url:focus {
+    border-color: var(--secondary-color);
+}
+
+.btn {
+    padding: 12px 25px;
+    max-width: 50%;
+    font-size: 1rem;
+    background-color: var(--button-background);
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn:hover {
+    background-color: var(--button-hover);
+    transform: translateY(-2px);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+/* Loading Spinner */
+.spinner {
+    border: 8px solid #f3f3f3;
+    border-top: 8px solid var(--spinner-color);
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 1s linear infinite;
+    margin: 20px auto;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Main Content Layout */
+.main-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.left-panel, .right-panel {
+    flex: 1;
+    min-width: 300px;
+    background-color: var(--card-background);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+#video-title {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+#video-thumbnail {
+    display: block;
+    margin: 0 auto 15px;
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s;
+}
+
+#video-thumbnail:hover {
+    transform: scale(1.02);
+}
+
+#video-details {
+    text-align: center;
+    font-size: 1rem;
+    color: var(--text-color);
+}
+
+/* Toggle Buttons */
+.toggle-btns {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.toggle-btns button {
+    flex: 1;
+    padding: 10px 0;
+    font-size: 1rem;
+    cursor: pointer;
+    border: none;
+    background-color: var(--navbar-background);
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    color: var(--text-color);
+    border-bottom: 2px solid transparent;
+    transition: background-color 0.3s, border-bottom 0.3s, color 0.3s;
+}
+
+.toggle-btns button.active {
+    border-bottom: 2px solid var(--primary-color);
+    color: var(--primary-color);
+}
+
+.toggle-btns button:hover:not(.active) {
+    background-color: var(--button-hover);
+    color: #ffffff;
+}
+
+/* Format Headers and Cards */
+.format-header, .format-card {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid var(--border-color);
+    align-items: center;
+}
+
+.format-header {
+    font-weight: 600;
+    background-color: var(--background-color);
+}
+
+.format-header span, .format-card span {
+    flex: 1;
+    text-align: center;
+}
+
+.format-header span.col-resolution,
+.format-card span.col-resolution,
+.format-header span.col-format,
+.format-card span.col-format {
+    text-align: left;
+}
+
+.format-card {
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.format-card:hover {
+    background-color: var(--secondary-color);
+    color: #ffffff;
+}
+
+/* Download Button Styles */
+.col-action-btn {
+    justify-content: center;
+    flex:0.8;
+    padding: 8px 16px;
+    background-color: var(--button-background);
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    display: flex;  
+    align-items: center;
+    gap: 8px;
+}
+
+.col-action-btn:hover {
+    background-color: var(--button-hover);
+    transform: translateY(-2px);
+}
+
+.col-action-btn:disabled {
+    background-color: #888888;
+    cursor: not-allowed;
+}
+
+/* Download Button Spinner */
+.button-spinner {
+    border: 2px solid #f3f3f3;
+    border-top: 2px solid #ffffff;
+    border-radius: 50%;
+    width: 12px;
+    height: 12px;
+    animation: spin 0.8s linear infinite;
+    display: inline-block;
+
+    /* Explicitly lock dimensions */
+    min-width: 12px;
+    max-width: 12px;
+    min-height: 12px;
+    max-height: 12px;
+
+    /* Prevent flexbox from affecting size */
+    flex: none;
+    align-self: center;
+
+    /* Ensure proper alignment in inline layouts */
+    vertical-align: middle;
+
+    /* Prevent scaling or zooming */
+    transform: scale(1);
+}
+
+/* Progress Bar */
+.progress-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background-color: #ccc;
+    z-index: 1000;
+}
+
+.progress {
+    height: 100%;
+    width: 0%;
+    background-color: var(--primary-color);
+    transition: width 0.2s;
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+    .main-content {
+        flex-direction: column;
+    }
+
+    .left-panel {
+        width: 100%;
+        margin: 0 auto;
+        box-sizing: border-box;
+    }
+
+    #video-url {
+        width: 100%;
+        margin: 0 auto;
+        box-sizing: border-box;
+    }
+
+    .input-section {
+        flex-direction: column;
+    }
+
+    .btn {
+        width: 100%;
+        margin-top: 10px;
+        max-width: 600px;
+        justify-content: center;
+    }
+
+    .format-header, .format-card {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .col-action-btn {
+        flex:0.8;
+        justify-content: center;
+    }
+
+    .format-header span, .format-card span {
+        flex-direction: row;
+        text-align: left;
+        margin-bottom: 5px;
+    }
+}
+
+/* Keyframes for Fade In */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- Open Graph Metadata for Link Embedding -->
+    <meta property="og:title" content="YTverter - YouTube Converter" />
+    <meta property="og:description" content="Convert your favorite YouTube videos into audio or video formats quickly and effortlessly with YTverter." />
+    <meta property="og:image" content="https://remotepc4me.xyz/static/images/logo.png" />
+    <meta property="og:url" content="https://remotepc4me.xyz" />
+    <meta property="og:type" content="website" />
+
+    <!-- Twitter Card Metadata for Link Embedding -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="YTverter - YouTube Converter" />
+    <meta name="twitter:description" content="Convert your favorite YouTube videos into audio or video formats quickly and effortlessly with YTverter." />
+    <meta name="twitter:image" content="https://remotepc4me.xyz/static/images/logo.png" />
+
+
+
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='fontawesome-free-6.7.1-web/css/all.min.css') }}">
+    <script href="{{ url_for('static', filename='fontawesome-free-6.7.1-web/js/all.min.js') }}"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YTverter</title>
+    <!-- Link to the external CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=League+Spartan:wght@700&display=swap" rel="stylesheet">
+    <!-- Animate.css for Animations -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-brand">
+            <a href="#">YTverter</a>
+        </div>
+        <div class="navbar-links">
+            <a href="https://github.com/DJJJNabba" target="_blank"><i class="fa-brands fa-github"></i></a>
+            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark/Light Mode">
+                <i class="fa-solid fa-moon"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Main Container -->
+    <div class="container">
+        <h1 class="animate__animated animate__fadeInDown">YouTube Converter</h1>
+        <div class="input-section animate__animated animate__fadeInUp">
+            <input type="text" id="video-url" placeholder="Paste YouTube URL here">
+            <button id="convert-btn" class="btn">Convert</button>
+        </div>
+        <div id="loading-spinner" class="spinner" style="display: none;"></div>
+        <div id="content" class="main-content animate__animated animate__fadeIn" style="display: none;">
+            <div class="left-panel">
+                <h2 id="video-title"></h2>
+                <img id="video-thumbnail" src="" alt="Video Thumbnail">
+                <p id="video-details"></p>
+            </div>
+            <div class="right-panel">
+                <div class="toggle-btns">
+                    <button id="video-btn" class="active">Video</button>
+                    <button id="audio-btn">Audio</button>
+                </div>
+                <div id="format-options"></div>
+            </div>
+        </div>
+    </div>
+    <!-- Progress Bar -->
+    <div id="progress-bar" class="progress-bar" style="display: none;">
+        <div id="progress" class="progress"></div>
+    </div>
+    <!-- Link to the external JavaScript -->
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
